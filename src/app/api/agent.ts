@@ -13,10 +13,10 @@ axios.interceptors.response.use(async response => {
     const { data, status } = error.response!;
     switch (status) {
         case 404:
-            toast.error(data?.title);
+            // toast.error(data)
             break;
         case 500:
-            console.log(data)
+            // console.log(data)
             break;
     }
     // toast.error(error.response?.data)
