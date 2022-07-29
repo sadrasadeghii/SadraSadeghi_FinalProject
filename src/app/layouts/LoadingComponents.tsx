@@ -5,7 +5,7 @@ interface Props {
     message?: string;
 }
 const LoadingComponents = ({ message = "در حال بارگذاری..." }: Props) => {
-    return (<Backdrop open={true} invisible={true}>
+    return (<Backdrop open={false} invisible={false}>
         <Box display={"flex"} justifyContent="center" alignItems="center" height={"100vh"} width="100wv">
             <CircularProgress color='secondary' />
             <Typography variant='h4' ml={2}>{message}</Typography>

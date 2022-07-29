@@ -4,19 +4,24 @@ import App from './app/layouts/App';
 
 import { BrowserRouter as Router } from 'react-router-dom'
 import './app/layouts/styles.css';
-// import { StoreProvider } from './context/StoreContext';
-// import { storeConfigure } from './app/store/storeConfigure';
-// import { Provider } from 'react-redux';
-// const store = storeConfigure()
+import { StoreProvider } from './context/StoreContext';
+import { storeConfigure } from './app/store/storeConfigure';
+import { Provider } from 'react-redux';
+const store = storeConfigure()
 ReactDOM.render(
   <React.StrictMode>
     <Router>
-      <App />
-    </Router >
-  </React.StrictMode >,
+      <StoreProvider>
+        <Provider store={store}>
+          <App />
+        </Provider>
+      </StoreProvider>
+    </Router>
+  </React.StrictMode>,
   document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
+

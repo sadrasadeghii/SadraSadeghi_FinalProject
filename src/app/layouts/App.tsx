@@ -59,7 +59,7 @@ function App() {
       mode: darkMode ? 'dark' : 'light'
     }
   })
-  if (loading) return <LoadingComponents message="در حال بارگزاری ..." />
+  // if (loading) return <LoadingComponents message="در حال بارگزاری ..." />
   return (
     <ThemeProvider theme={theme2}>
       <ToastContainer autoClose={4000} position={toast.POSITION.TOP_RIGHT} hideProgressBar
